@@ -2,7 +2,7 @@ version: 0.0
 os: windows
 files:
   - source: /target/SampleMavenTomcatApp.war
-    destination: /tmp/codedeploy-deployment-staging-area/
+    destination: C:/tmp/codedeploy-deployment-staging-area/
 #   - source: /scripts/configure_http_port.xsl
 #     destination: /tmp/codedeploy-deployment-staging-area/
 # hooks:
