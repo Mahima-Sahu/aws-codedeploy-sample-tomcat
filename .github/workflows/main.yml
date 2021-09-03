@@ -19,12 +19,6 @@ jobs:
       # Step 3
       - name: Build Application and Run unit Test
         run: mvn -B test --file pom.xml
-
-  continuous-deployment:
-    runs-on: ubuntu-latest
-    needs: [continuous-integration]
-    if: github.ref == 'refs/heads/main'
-    steps:
      # Step 1
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
