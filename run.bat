@@ -5,7 +5,6 @@ set myfolder="C:\apache-tomcat-8.5.69-windows-x64\apache-tomcat-8.5.69\webapps\S
 if exist %myfile% del %myfile%
 if exist %myfolder% del %myfolder%
 
-cd C:\apache-tomcat-8.5.69-windows-x64\apache-tomcat-8.5.69\bin
-startup.bat
+start "mycmd" "C:\apache-tomcat-8.5.69-windows-x64\apache-tomcat-8.5.69\bin\startup.bat"
 
 pause
