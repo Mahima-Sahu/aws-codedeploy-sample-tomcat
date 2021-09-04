@@ -1,5 +1,11 @@
 @echo off
-del C:\Program Files\Apache Software Foundation\Tomcat 8.5\webapps\ROOT ROOT.war
-cd C:\Program Files\Apache Software Foundation\Tomcat 8.5\bin
+
+set myfile="C:\apache-tomcat-8.5.69-windows-x64\apache-tomcat-8.5.69\webapps\SampleMavenTomcatApp.war"
+set myfolder="C:\apache-tomcat-8.5.69-windows-x64\apache-tomcat-8.5.69\webapps\SampleMavenTomcatApp"
+if exist %myfile% del %myfile%
+if exist %myfolder% del %myfolder%
+
+cd C:\apache-tomcat-8.5.69-windows-x64\apache-tomcat-8.5.69\bin
 startup.bat
+
 pause
