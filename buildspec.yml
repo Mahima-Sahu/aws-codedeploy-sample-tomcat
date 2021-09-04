@@ -10,4 +10,5 @@ artifacts:
   files:
     - target/SampleMavenTomcatApp.war
     - appspec.yml  
+    - run.bat
 #     - '**/*'
