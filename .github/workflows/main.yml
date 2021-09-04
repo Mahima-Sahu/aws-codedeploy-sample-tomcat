@@ -29,7 +29,8 @@ jobs:
      # Step 2
       - name: Run code pipeline
         run: | 
-          aws codepipeline start-pipeline-execution --name buildpipe && aws codepipeline get-pipeline-state --name buildpipe && aws codepipeline list-action-executions --pipeline-name buildpipe
+          aws codepipeline start-pipeline-execution --name buildpipe && aws codepipeline get-pipeline-state --name buildpipe && aws codepipeline list-action-executions --pipeline-name buildpipe &&
+          timeout 300
         #aws codepipeline put-job-success-result
 #      # Step 2
 #       - name: Create CodeDeploy Deployment
