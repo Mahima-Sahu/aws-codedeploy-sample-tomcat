@@ -7,10 +7,9 @@ phases:
       - mvn package
 
 artifacts:
-  files:
-    - '**/*'  
-#     - run.bat
-#     - target/SampleMavenTomcatApp.war
-#     - appspec.yml  
-
+  files: 
+    - run.bat
+    - target/SampleMavenTomcatApp.war
+    - appspec.yml  
+#     - '**/*' 
 
