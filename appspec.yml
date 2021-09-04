@@ -1,7 +1,7 @@
 version: 0.0
 os: windows
 files:
-  - source: /home/runner/work/aws-codedeploy-sample-tomcat/aws-codedeploy-sample-tomcat/src/target/SampleMavenTomcatApp.war
+  - source: /target/SampleMavenTomcatApp.war
     destination: C:/sample-tomcat/
    # C:/tmp/codedeploy-deployment-staging-area/
 #   - source: /scripts/configure_http_port.xsl
