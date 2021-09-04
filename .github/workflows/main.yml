@@ -29,8 +29,8 @@ jobs:
      # Step 2
       - name: Run code pipeline
         run: | 
-          aws codepipeline start-pipeline-execution --name zxcascascas
-          aws codepipeline get-pipeline-state --name zxcascascas
+          aws codepipeline start-pipeline-execution --name buildpipe
+          aws codepipeline get-pipeline-state --name buildpipe
 #      # Step 2
 #       - name: Create CodeDeploy Deployment
 #         id: deploy
