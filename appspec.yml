@@ -7,7 +7,7 @@ files:
 #   - source: /scripts/configure_http_port.xsl
 #     destination: /tmp/codedeploy-deployment-staging-area/
 hooks:
-  ApplicationStop:
+  BeforeInstall:
     - location: run.bat
       runas: Administrator
 #       timeout: 300
