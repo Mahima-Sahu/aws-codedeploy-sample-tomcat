@@ -8,15 +8,15 @@ files:
 #     destination: /tmp/codedeploy-deployment-staging-area/
 hooks:
   BeforeInstall:
-    - location: run.bat
+    - location: myscripts/run.bat
       runas: Administrator
 #       timeout: 300
 #   BeforeInstall:
 #     - location: scripts/install_dependencies
 #       timeout: 300
   ApplicationStart:
-    - location: tomcat.bat
+    - location: myscripts/tomcat.bat
       runas: Administrator
   ValidateService:
-    - location: check.bat
+    - location: myscripts/check.bat
       runas: Administrator
