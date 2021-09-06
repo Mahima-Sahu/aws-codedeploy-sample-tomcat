@@ -3,7 +3,7 @@
 ECHO %DATE% %TIME% Calling %0 with %*
 set /a count=1
 :start
-SET "URL=http://localhost:8088"
+SET "URL=http://localhost:8088/login/user-login/"
 
 SET HTTP=
 for /f %%a in ( 'curl --write-out "%%{http_code}" -o nul -m 10 -q -s "%URL%"' ) do set HTTP=%%a
