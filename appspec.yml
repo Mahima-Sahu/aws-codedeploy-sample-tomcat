@@ -14,9 +14,9 @@ hooks:
 #   BeforeInstall:
 #     - location: scripts/install_dependencies
 #       timeout: 300
-  ApplicationStart:
-    - location: myscripts/tomcat.bat
-      runas: Administrator
+#   ApplicationStart:
+#     - location: myscripts/tomcat.bat
+#       runas: Administrator
   ValidateService:
     - location: myscripts/check.bat
       runas: Administrator
