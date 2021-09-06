@@ -8,7 +8,7 @@ phases:
 
 artifacts:
   files: 
-    - run.bat
+    - myscripts/*
     - target/SampleMavenTomcatApp.war
     - appspec.yml  
 #     - '**/*' 
