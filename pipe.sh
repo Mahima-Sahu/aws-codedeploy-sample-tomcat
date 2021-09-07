@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #sudo apt-get install jq 
 aws codepipeline get-pipeline-state --name buildpipe > state.json
 sudo chmod 777 state.json
