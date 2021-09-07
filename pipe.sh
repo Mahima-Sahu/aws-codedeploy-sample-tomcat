@@ -19,7 +19,7 @@ if [ "$STATE" = "InProgress" ]; then
 fi
 if [ "$STATE" = "Succeeded" ]; then
   echo "Pipeline is Succeeded"
-# fi  
+fi  
 # if [ "$STATE" = "Failed" ]; then
 #   echo "Pipeline execution failed !!"
 # fi
