@@ -1,24 +1,23 @@
-#!/bin/bash
-
-sudo apt-get install jq -y
+#!/bin/sh
+sudo apt-get install jq 
 
 touch state.json
 
 aws codepipeline get-pipeline-state --name buildpipe > state.json
-STATE=`jq stageStates[latestExecution.status]`
+STATE=`jq .stageStates[latestExecution.status] state.json`
 
 
 if [ "$STATE" = "InProgress" ]; then
   echo "InProgress......"
   timeout 50 
   aws codepipeline get-pipeline-state --name buildpipe > state.json
-  STATE=`jq stageStates[latestExecution.status]`  
+  STATE=`jq .stageStates[latestExecution.status] state.json`  
 fi
 if [ "$STATE" = "InProgress" ]; then
   echo "InProgress......"
   timeout 50 
   aws codepipeline get-pipeline-state --name buildpipe > state.json
-  STATE=`jq stageStates[latestExecution.status]`  
+  STATE=`jq .stageStates[latestExecution.status] state.json`  
 fi
 
 if [ "$STATE" = "Succeeded" ]; then
