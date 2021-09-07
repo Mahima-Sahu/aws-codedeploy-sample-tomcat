@@ -21,8 +21,9 @@ then
 fi
 if [ "$STATE" = "Succeeded" ]
 then
-  echo "Pipeline is Succeeded"    
-elif [ "$STATE" = "Failed" ]
-then
-  echo "Pipeline execution failed !!"
-fi
+  echo "Pipeline is Succeeded"
+fi  
+# if [ "$STATE" = "Failed" ]
+# then
+#   echo "Pipeline execution failed !!"
+# fi
