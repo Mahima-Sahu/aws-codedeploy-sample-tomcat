@@ -33,5 +33,5 @@ jobs:
       - name: wait
         run: |
           sudo chmod +x pipe.sh
-          ./pipe.sh
+          pipe.sh
         shell: bash
