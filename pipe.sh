@@ -18,8 +18,7 @@ if [ "$STATE" == "InProgress" ]; then
   STATE=`jq .latestExecution.status state.json`  
 fi
 if [ "$STATE" == "Succeeded" ]; then
-  echo "Pipeline is Succeeded"
-fi  
+  echo "Pipeline is Succeeded" 
 if [ "$STATE" == "Failed" ]; then
   echo "Pipeline execution failed !!"
-fi
+
