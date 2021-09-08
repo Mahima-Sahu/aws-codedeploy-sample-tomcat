@@ -32,5 +32,6 @@ jobs:
 #           aws codepipeline start-pipeline-execution --name buildpipe && aws codepipeline get-pipeline-state --name buildpipe && aws codepipeline list-action-executions --pipeline-name buildpipe
       - name: run pipeline
         run: |
-          sudo chmod a+x pipe.sh && sh pipe.sh
-        shell: sh
+          sudo chmod a+x pipe.sh  
+          ./pipe.sh
+        #shell: bash
