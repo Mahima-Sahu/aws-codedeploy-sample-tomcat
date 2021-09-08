@@ -3,7 +3,7 @@
 sudo apt-get upgrade
 sudo apt-get install dos2unix
 touch state.json
-aws codepipeline get-pipeline-state --name buildpipe > state.json
+aws codepipeline get-pipeline-state --name buildpipe >> state.json
 #sudo chmod a+x state.json
 STATE=`jq .stageStates[0].latestExecution.status state.json`
 if [ "$STATE" = "InProgress" ]
