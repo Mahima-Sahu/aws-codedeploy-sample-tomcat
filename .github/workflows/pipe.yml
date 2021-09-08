@@ -39,6 +39,7 @@ jobs:
           echo 'echo "matched"' >> pipe1.sh
           echo 'fi' >> pipe1.sh
           chmod +x pipe1.sh
+          cat pipe1.sh
           ./pipe1.sh
         #sudo chmod a+x pipe.sh && sh pipe.sh
         shell: sh
