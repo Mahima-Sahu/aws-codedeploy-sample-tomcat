@@ -4,20 +4,23 @@ touch state.json
 aws codepipeline get-pipeline-state --name buildpipe > state.json
 SOURCE=`jq .stageStates[0].latestExecution.status state.json`
 DEPLOY=`jq .stageStates[2].latestExecution.status state.json`
-while [ $SOURCE = "InProgress" ] || [ $DEPLOY = "InProgress" ]
+BUILD=`jq .stageStates[1].latestExecution.status state.json`
+while ([ $SOURCE = "InProgress" ] || [ $DEPLOY = "InProgress" ] || [ $BUILD = "InProgress" ])
 do
     echo "Pipeline is InProgress......"
-    timeout 50 
+    sleep 50s
     aws codepipeline get-pipeline-state --name buildpipe > state.json
     SOURCE=`jq .stageStates[0].latestExecution.status state.json`
     DEPLOY=`jq .stageStates[2].latestExecution.status state.json`
 done
-if [ $SOURCE = "Succeeded" ] && [ $DEPLOY = "Succeeded" ]
+if ([ $SOURCE = "Succeeded" ] && [ $DEPLOY = "Succeeded" ] && [ $BUILD = "Succeeded" ])
 then
     echo "Pipeline-- Succeeded --"
-elif [ $SOURCE = "Stopped" ] || [ $DEPLOY = "Stopped" ]
+elif ([ $SOURCE = "Stopped" ] || [ $DEPLOY = "Stopped" ] || [ $BUILD = "Stopped" ])
 then
     echo "Pipeline is-- Stopped --"
+    exit 1
 else
-    echo "Pipeline-- Failed --!!"  
+    echo "Pipeline-- Failed --!!"
+    exit 1
 fi
