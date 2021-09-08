@@ -14,3 +14,4 @@ if [ "$STATE" = "InProgress" ]
     STATE=`jq .stageStates[0].latestExecution.status state.json`  
   else echo "successfull......."
 fi
+
