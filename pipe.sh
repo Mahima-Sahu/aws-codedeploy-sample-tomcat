@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 touch state.json
 aws codepipeline get-pipeline-state --name buildpipe > state.json
 sudo chmod 777 state.json
