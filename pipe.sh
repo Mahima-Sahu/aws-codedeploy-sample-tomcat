@@ -1,6 +1,7 @@
 #!/bin/sh
 #sudo apt-get install jq 
-sudo apt-get install dos2unix
+sudo apt-get update -y
+sudo apt-get install -y dos2unix
 aws codepipeline get-pipeline-state --name buildpipe > state.json
 sudo chmod 777 state.json
 STATE=`jq .latestExecution.status state.json`
