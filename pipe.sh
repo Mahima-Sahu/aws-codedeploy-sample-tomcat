@@ -4,7 +4,7 @@ sudo apt-get update -y
 sudo apt-get install -y dos2unix
 touch state.json
 aws codepipeline get-pipeline-state --name buildpipe > state.json
-sudo chmod 777 state.json
+sudo chmod a+x state.json
 STATE=`jq .stageStates[0].latestExecution.status state.json`
 if [ "$STATE" == "InProgress" ]
 then
