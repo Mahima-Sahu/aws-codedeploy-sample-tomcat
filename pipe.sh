@@ -20,6 +20,6 @@ fi
 if [ "$STATE" = "Succeeded" ]; then
   echo "Pipeline is Succeeded"
 fi  
-# if [ "$STATE" = "Failed" ]; then
-#   echo "Pipeline execution failed !!"
-# fi
+if [ "$STATE" = "Failed" ]; then
+  echo "Pipeline execution failed !!"
+fi
