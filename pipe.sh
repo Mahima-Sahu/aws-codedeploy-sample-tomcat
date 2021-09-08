@@ -12,6 +12,5 @@ if [ "$STATE" = "InProgress" ]
     aws codepipeline get-pipeline-state --name buildpipe > state.json
     sudo chmod 777 state.json
     STATE=`jq .stageStates[0].latestExecution.status state.json`  
-else
-  echo "successfull......."
+  else echo "successfull......."
 fi
