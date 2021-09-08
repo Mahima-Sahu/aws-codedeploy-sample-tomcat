@@ -34,7 +34,7 @@ jobs:
         run: |
           touch pipe1.sh
           echo '#!/bin/sh' >> pipe1.sh
-          echo 'if["check" = "check"]; then' >> pipe1.sh
+          echo 'if["check" = "check"]' >> pipe1.sh
           echo 'echo "matched"' >> pipe1.sh
           echo 'fi' >> pipe1.sh
           chmod +x pipe1.sh
