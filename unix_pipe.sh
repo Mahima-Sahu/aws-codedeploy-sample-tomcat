@@ -1,8 +1,8 @@
 #!/bin/sh
-#aws codepipeline start-pipeline-execution --name buildpipe
+aws codepipeline start-pipeline-execution --name buildpipe
 touch state.json
-#aws codepipeline get-pipeline-state --name buildpipe > state.json
-declare -i count=3
+aws codepipeline get-pipeline-state --name buildpipe > state.json
+count=3
 SOURCE=`jq -r .stageStates[0].latestExecution.status state.json`
 DEPLOY=`jq -r .stageStates[2].latestExecution.status state.json`
 BUILD=`jq -r .stageStates[1].latestExecution.status state.json`
