@@ -14,7 +14,7 @@ do
     SOURCE=`jq -r .stageStates[0].latestExecution.status state.json`
     DEPLOY=`jq -r .stageStates[2].latestExecution.status state.json`
     BUILD=`jq -r .stageStates[1].latestExecution.status state.json`
-    ((count = count + 1))
+    count=$((count+1))
     if [ $count = 3 ]
     then 
       break
